@@ -1,0 +1,65 @@
+===========================================
+ BOSS AUTO BOT - HƯỚNG DẪN SỬ DỤNG
+===========================================
+
+1. CÁCH CHẠY
+-------------
+- Mở game "Top Heroes" trước, để cửa sổ game hiển thị bình thường
+  (không thu nhỏ, không bị cửa sổ khác che mất).
+- Double-click "Boss.exe" để chạy bot.
+- Muốn dừng: bấm Ctrl + C trong cửa sổ đen (cmd) đang chạy, hoặc đóng
+  thẳng cửa sổ đó.
+- Bot chạy trong lúc bạn có thể chuyển qua desktop ảo khác làm việc,
+  không cần ngồi nhìn màn hình.
+
+Lưu ý: lần đầu mở, Windows SmartScreen hoặc phần mềm diệt virus có thể
+cảnh báo vì đây là công cụ tự động click chuột (không phải virus, chỉ là
+loại phần mềm hay bị nghi ngờ). Chọn "More info" -> "Run anyway" nếu gặp
+cảnh báo màu xanh của Windows.
+
+
+2. NẾU BOT KHÔNG BẤM ĐÚNG NÚT (rất hay gặp!)
+----------------------------------------------
+Bot nhận diện nút bằng cách so khớp ẢNH đã chụp sẵn trong thư mục
+"buttons" với những gì đang hiển thị trên màn hình. Vì máy bạn có thể
+khác độ phân giải màn hình / kích thước cửa sổ game so với máy đã chụp
+ảnh mẫu ban đầu, nên CÓ THỂ một vài nút sẽ không nhận diện được ngay.
+
+Cách khắc phục - chụp lại ảnh nút trên chính máy bạn:
+  1. Mở game, để đúng màn hình đang hiển thị nút bị lỗi.
+  2. Double-click "capture_button.exe".
+  3. Gõ đúng tên file cần thay (xem danh sách bên dưới), Enter.
+  4. Màn hình sẽ mờ đi, kéo chuột khoanh SÁT viền nút đó (càng ít nền
+     thừa xung quanh càng tốt), nhả chuột để lưu.
+  5. Chạy lại "Boss.exe" để kiểm tra.
+
+Danh sách các nút cần chụp (đúng tên file, có phân biệt hoa/thường):
+  - button_1.png        : icon kính lúp (mở tìm kiếm)
+  - button_2.png         : nút filter "Enemy" lúc CHƯA chọn
+  - button_3.png          : card mục tiêu lúc hiển thị ĐẦY ĐỦ, chưa chọn
+  - button_3(3).png    : card mục tiêu lúc bị che một phần, chưa chọn
+  - button_4.png        : nút "Search"
+  - button_5.png        : nút "Attack"
+  - button_6.png        : nút "Go"
+  - idle.png                  : chữ "Idle" trong ô Queue (đội quân rảnh)
+
+  (button_2(2).png, button_3(2).png, button_3(4).png là ảnh trạng thái
+  ĐÃ CHỌN - dùng để bot biết không cần bấm lại, thường không cần sửa)
+
+
+3. NẾU CÓ 1 NÚT BỊ PANEL CHE KHUẤT KHÔNG THỂ CHỤP ĐỦ
+-------------------------------------------------------
+Nếu chụp đi chụp lại vẫn không nhận diện được (vì nút bị che quá nhiều),
+có thể click theo TOẠ ĐỘ CỐ ĐỊNH thay vì nhận diện ảnh:
+  1. Double-click "show_mouse_pos.exe".
+  2. Di chuột tới đúng điểm cần click trong game, đọc dòng
+     "Offset so với tâm (dx, dy)".
+  3. Báo lại 2 số (dx, dy) đó cho người đã lập trình bot này để họ chỉnh
+     giúp trong file cấu hình (không tự sửa được nếu chỉ có file .exe).
+
+
+4. THƯ MỤC "debug"
+--------------------
+Khi bot không tìm thấy 1 nút bắt buộc, nó tự lưu ảnh chụp màn hình lúc
+đó vào thư mục "debug" (tự tạo khi cần) để tiện xem/so sánh, kiểm tra
+tại sao không khớp được.
